@@ -1,12 +1,13 @@
 <template>
   <div>
+    <header>{{ cart.length }} in cart</header>
     <h1>Products</h1>
     <div class="products">
       <div v-for="product in products" :key="product.name">
         {{ product.name }}
         <img :src="product.image" />
         <div>{{ product.cost }}</div>
-        <button>Add to cart</button>
+        <button v-on:click="addItemToCart(product)">Add to cart</button>
       </div>
     </div>
   </div>
@@ -17,6 +18,7 @@ export default {
   name: 'App',
   data: () => {
     return {
+      cart: [],
       products: [
         {
           name: 'Hair Brush',
@@ -33,13 +35,29 @@ export default {
       ],
     };
   },
+  methods: {
+    addItemToCart(product) {
+      this.cart.push(product);
+      console.log(this.cart);
+    },
+  },
   components: {},
 };
 </script>
 
+<style>
+body {
+  margin: 0;
+}
+</style>
 <style scoped>
 .products {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+header {
+  height: 100px;
+  background-color: #ddd;
 }
 </style>
