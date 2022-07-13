@@ -1,6 +1,7 @@
 <template>
   <div>
     <header>
+      <button v-on:click="navigateTo('products')">View Products</button>
       {{ cart.length }} in cart
       <button v-on:click="navigateTo('cart')">View Cart</button>
     </header>
