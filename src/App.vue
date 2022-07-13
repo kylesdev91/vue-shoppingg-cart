@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Kai Family Farm</h1>
     <header>
       <button v-on:click="navigateTo('products')">View Products</button>
       {{ cart.length }} in cart
@@ -46,19 +47,36 @@ export default {
 body {
   margin: 0;
 }
+
 .products {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+.products button {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 </style>
 
 <style scoped>
 header {
   height: 60px;
-  background-color: #eee;
-  box-shadow: 2px 2px 5px #999;
+  box-shadow: 2px 2px 5px blue;
+  background-color: pink;
   text-align: right;
   font-size: 30px;
   padding-top: 20px;
+}
+
+header button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: green;
 }
 </style>

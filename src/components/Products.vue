@@ -3,9 +3,9 @@
     <h1>Products</h1>
     <div class="products">
       <div v-for="(product, index) in products" :key="index">
-        {{ product.name }}
+        <h3>{{ product.name }}</h3>
+        <div class="cost">{{ product.cost }}</div>
         <img :src="product.image" />
-        <div>{{ product.cost }}</div>
         <button v-on:click="addItemToCart(product)">Add to cart</button>
       </div>
     </div>
