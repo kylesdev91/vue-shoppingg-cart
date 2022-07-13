@@ -8,6 +8,16 @@
 
     <div v-if="page === 'cart'">
       <h1>Your Cart</h1>
+      <div class="products">
+        <div v-for="product in cart" :key="product.name">
+          {{ product.name }}
+          <img :src="product.image" />
+          <div>{{ product.cost }}</div>
+          <button v-on:click="removeItemFromCart(product)">
+            Remove from cart
+          </button>
+        </div>
+      </div>
     </div>
 
     <div v-if="page === 'products'">
@@ -51,6 +61,9 @@ export default {
     addItemToCart(product) {
       this.cart.push(product);
       console.log(this.cart);
+    },
+    removeItemFromCart(product) {
+      this.cart.splice(this.cart.indexOf(product));
     },
     navigateTo(page) {
       this.page = page;
