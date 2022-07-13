@@ -34,7 +34,6 @@ export default {
   },
   methods: {
     addItemToCart(product) {
-      console.log('here', product);
       this.$emit('addItemToCart', product);
     },
   },
